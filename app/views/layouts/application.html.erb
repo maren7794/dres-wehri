@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DresWehri</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%#= favicon_tag 'images/favicon.png' %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+    <script>
+      $(document).ready(function(){
+          $("div.button-slide-toggle").click(function(){
+              $(this).next().slideToggle();
+          });
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- Navabar -->
+    <div class=" navbar-wagon navbar-wagon-right-all hidden-xs hidden-sm">
+      <a href="/" class="navbar-wagon-brand">
+        <%= image_tag 'logo-praxis.png' %>
+        <!-- <img src="images/logo-praxis.png" alt="logo"> -->
+      </a>
+      <div class="rechts">
+        <div class="weiss telefon">
+          07231/313673 &ensp; <i class="fa fa-phone"></i>
+        </div>
+
+        <div class="navbar-wagon-right hidden-xs hidden-sm">
+          <a href="" class="navbar-wagon-item navbar-wagon-link">Praxis</a>
+          <a href="./team.html" class="navbar-wagon-item navbar-wagon-link">Team</a>
+          <a href="./leistungen.html" class="navbar-wagon-item navbar-wagon-link">Leistungen</a>
+          <a href="" class="navbar-wagon-item navbar-wagon-link">Praxislabor</a>
+          <a href="./anfahrt.html" class="navbar-wagon-item navbar-wagon-link">Anfahrt</a>
+        </div>
+      </div>
+    </div>
+    <div class=" navbar-wagon navbar-wagon-item hidden-md hidden-lg">
+      <a href="/" class="navbar-wagon-brand">
+        <img src="images/logo-praxis.png" alt="logo">
+      </a>
+
+      <div class="weiss telefon">
+        07231/313673 &ensp; <i class="fa fa-phone"></i>
+
+      </div>
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle weiss" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Praxis</a></li>
+            <li><a href="./team.html">Team</a></li>
+            <li><a href="./leistungen.html">Leistungen</a></li>
+            <li><a href="#">Praxislabor</a></li>
+            <li><a href="./anfahrt.html">Anfahrt</a></li>
+            <i class="fa fa-phone"></i>
+        </ul>
+      </div>
+    </div>
+
+
+    <%= yield %>
+
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="footer-links">
+        <div class="hell-grau">Copyright</div>
+      </div>
+      <div class="footer-copyright hell-grau">
+        <a href="./impressum" class="hell-grau">Impressum</a>
+          &ensp;
+        <a href="./datenschutz" class="hell-grau">Datenschutz</a>
+      </div>
+    </div>
+  </body>
+</html>
