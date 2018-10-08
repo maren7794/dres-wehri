@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'anfahrt', to: 'pages#anfahrt', as: :anfahrt
   get 'impressum', to: 'pages#impressum', as: :impressum
   get 'datenschutz', to: 'pages#datenschutz', as: :datenschutz
-  get 'pages/home'
+  #get 'pages/home'
   # get 'pages/praxis'
   # get 'pages/team'
   # get 'pages/leistungen'
